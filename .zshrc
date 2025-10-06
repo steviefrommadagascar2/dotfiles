@@ -64,10 +64,10 @@ if [[ -z "$TMUX" && -n "$PS1" && -z "$SSH_CLIENT" && -t 1 ]]; then
   # Check if tmux server is running
   if tmux has-session -t root 2>/dev/null; then
     # Attach to existing "root" session
-    exec tmux attach -t root
+    tmux attach -t root
   else
     # Create "root" session and attach
-    exec tmux new-session -s root
+    tmux new-session -s root
   fi
 fi
 
@@ -86,3 +86,5 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 export HISTFILE=~/.zsh_history
 
+# Env variables
+export GH_TOKEN=
