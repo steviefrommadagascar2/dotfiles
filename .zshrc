@@ -71,7 +71,6 @@ if [[ -z "$TMUX" && -n "$PS1" && -z "$SSH_CLIENT" && -t 1 ]]; then
   fi
 fi
 
-
 # Make sure terminal supports 256 colors
 export TERM="xterm-256color"
 
@@ -87,4 +86,25 @@ export SAVEHIST=10000
 export HISTFILE=~/.zsh_history
 
 # Env variables
-export GH_TOKEN=
+source ~/.env
+
+# bun completions
+[ -s "/Users/anand/.bun/_bun" ] && source "/Users/anand/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "$HOME/.local/bin/env"
+
+# python alias
+alias python='python3'
+
+# Ctrl+R fuzzy-finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Alias vim -> nvim
+alias vim='nvim'
+
+# cmux
+source "$HOME/.cmux/cmux.sh"
