@@ -106,5 +106,3 @@ alias python='python3'
 # Alias vim -> nvim
 alias vim='nvim'
 
-# cmux
-source "$HOME/.cmux/cmux.sh"
